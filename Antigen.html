@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <head></head>
+	<body>
+    	<h1>DOM ZDRAVLJA KUČEVO</h1>
+    	<br><br>
+    	<select id="test" onclick="test()">
+	        <option value="Antigen">Antigen</option>
+	        <option value="Serologija">Serologija</option>
+	    </select>
+	    <br><br><br>
+	    <div>
+		    <p id="poz">Pozitivni:</p>
+		    <input id="pozitivni">
+		</div>
+		<br><br>
+		<div>
+		    <p id="neg">Negativni: </p>
+		    <input id="negativni" />
+		</div>
+		<br><br>
+	    <div>
+	    	<p>Ukupno:</p>
+	    	<p id="rezultat"></p>
+	    </div>
+	    <br><br>
+	    <button onclick="window.print()">Štampa</button>
+<style>
+    body {
+        margin: 0;
+        text-align: center;
+    }
+    select {
+        padding: 5px 15px;
+        font-size: 25px;
+        font-weight: bold;
+
+    }
+    input {
+    	text-align: center;
+    	font-size: 18px;
+    	padding: 10px 0px;
+    	margin-left: 10px;
+    	font-weight: bolder;
+    }
+    p {
+    	font-size: 24px;
+    	font-weight: bold;
+    }
+    button {
+    	padding: 10px;
+    }
+    div {
+    	display: inline-flex;
+    	align-items: center;
+    	height: 70px;
+    } 
+    #rezultat {
+    	padding-left: 5px;
+    	font-size: 26px
+    }
+
+    @media print {
+    input {
+        border: none;
+        border-bottom: 1px solid black;
+        }
+    button {
+        visibility: hidden;
+    }
+    select {
+    	border: 0px;
+    	outline: 0px;
+    }
+}
+
+</style>
+<script type="text/javascript">
+	
+	function test () {
+	var p = document.getElementById("test");
+	if (p.value == "Serologija") {
+		document.getElementById("poz").innerHTML = "Na lični zahtev:";
+		document.getElementById("neg").innerHTML = "Hospitalizacija:";
+	} else {
+		document.getElementById("poz").innerHTML = "Pozitivni:";
+		document.getElementById("neg").innerHTML = "Negativni:";
+	}}
+
+	document.getElementById("negativni").addEventListener("keyup", function (evt) {
+		const x = document.getElementById("pozitivni").value;
+		const y = document.getElementById("negativni").value;
+		document.getElementById("rezultat").innerHTML = Number(x) + Number(y);
+	}, false);
+
+	
+
+</script>
+</body>
+</head>
