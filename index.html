@@ -8,10 +8,17 @@
 	<body>
     	<h1>DOM ZDRAVLJA KUČEVO</h1>
     	<br><br>
+		<div>
+		<input type="date" id="datum" />
+		</div>
+		<br><br>
+		<div>
     	<select id="test" onclick="test()">
 	        <option value="Antigen">Antigen</option>
 	        <option value="Serologija">Serologija</option>
+			<option value="PCR">PCR</option>
 	    </select>
+		</div>
 	    <br><br><br>
 	    <div>
 		    <p id="poz">Pozitivni:</p>
@@ -22,7 +29,7 @@
 		    <p id="neg">Negativni: </p>
 		    <input id="negativni" />
 		</div>
-		<br><br>
+		<br><br><br><br>
 	    <div>
 	    	<p>Ukupno:</p>
 	    	<p id="rezultat"></p>
@@ -32,11 +39,11 @@
 <style>
     body {
         margin: 0;
-        text-align: center;
-    }
+		text-align: center;
+	}
     select {
         padding: 5px 15px;
-        font-size: 25px;
+        font-size: 45px;
         font-weight: bold;
 
     }
@@ -63,8 +70,11 @@
     	padding-left: 5px;
     	font-size: 26px
     }
-
+	
     @media print {
+	body {
+		margin-top: 20%;
+	}
     input {
         border: none;
         border-bottom: 1px solid black;
@@ -101,4 +111,4 @@
 
 </script>
 </body>
-</head>
+
